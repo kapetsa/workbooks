@@ -1,22 +1,25 @@
 <#import  "parts/common.ftl" as c>
-<#import  "parts/login.ftl" as l>
 
 
 <@c.page>
-  <div>
-<@l.logout/>
-  </div>
-  <div>Список конспектов</div>
+
+  <div class="md-4">Список конспектов</div>
+ <a href="/createWB">Добавить конспект</a>
 <#list workbooks as workbook>
-     <div>
-         <b>${workbook.id}</b>
-         <b>${workbook.name}</b>
-         <b>${workbook.description}</b>
-         <strong>${workbook.authorName}</strong>
-     </div>
+
+    <div class="card my-4" style="width: 60rem;">
+        <div class="card-header">
+            ${workbook.authorName}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">${workbook.name}</h5>
+            <p class="card-text">${workbook.description}</p>
+            <a href="/" class="btn btn-primary">Открыть конспект</a>
+        </div>
+    </div>
 <#else >
 Нет конспектов
 </#list>
 
-  <a href="/createWB">Добавить конспект</a>
+
 </@c.page>

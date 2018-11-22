@@ -1,4 +1,4 @@
 <#import  "parts/common.ftl" as c>
 <@c.page>
-<a href="/wbooks">Список конспектов</a>
+<h5>Добро пожаловать</h5>
 </@c.page>

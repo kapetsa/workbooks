@@ -15,7 +15,7 @@ public class User implements UserDetails {
     private Long id;
     private String username;
     private String password;
-    private String activation_code;
+    private String activationCode;
     private String email;
     private boolean active;
 
@@ -23,6 +23,10 @@ public class User implements UserDetails {
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
+
+    public boolean isAdmin() {
+        return roles.contains(Role.ADMIN);
+    }
 
 
     public User(String username, String password) {
@@ -47,12 +51,12 @@ public class User implements UserDetails {
         this.roles = roles;
     }
 
-    public String getActivation_code() {
-        return activation_code;
+    public String getActivationCode() {
+        return activationCode;
     }
 
-    public void setActivation_code(String activation_code) {
-        this.activation_code = activation_code;
+    public void setActivationCode(String activation_code) {
+        this.activationCode = activation_code;
     }
 
     public String getEmail() {
