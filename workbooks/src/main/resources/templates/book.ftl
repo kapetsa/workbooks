@@ -29,7 +29,7 @@
 </#list>
 
     <input type="text" class="form-control"
-               value="<#if message??>${message.name}</#if>" name="text" placeholder="Оставить комментарий...">
+               value="<#if message??>${message.text}</#if>" name="text" placeholder="Оставить комментарий...">
           <#if textError??>
                 <div class="invalid-feedback">
                     ${textError}

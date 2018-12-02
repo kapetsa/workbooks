@@ -9,7 +9,7 @@
 <div>${description}</div>
 <div>${body}</div>
 
-<form> <div class="md-4">Комментарии</div>
+<form> <h5>Комментарии</h5>
 
 <#list comments as comment>
 
@@ -29,7 +29,7 @@
 </#list>
 
     <input type="text" class="form-control"
-               value="<#if message??>${message.name}</#if>" name="text" placeholder="Оставить комментарий...">
+               value="<#if message??>${message.text}</#if>" name="text" placeholder="Оставить комментарий...">
           <#if textError??>
                 <div class="invalid-feedback">
                     ${textError}
