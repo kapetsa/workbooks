@@ -14,11 +14,13 @@
         <div class="card-body">
             <h5 class="card-title">${workbook.name}</h5>
             <p class="card-text">${workbook.description}</p>
-            <a href="/" class="btn btn-primary">Открыть конспект</a>
+            <a href="/book/${workbook.getId()}" class="btn btn-primary">Открыть конспект</a>
         </div>
     </div>
 <#else >
+<div>
 Нет конспектов
+</div>
 </#list>
 
 

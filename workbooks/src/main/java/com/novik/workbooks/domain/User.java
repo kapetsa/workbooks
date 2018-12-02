@@ -1,9 +1,14 @@
 package com.novik.workbooks.domain;
 
+import net.sf.oval.constraint.NotEmpty;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.util.Collection;
 import java.util.Set;
 
@@ -13,9 +18,13 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @NotEmpty
     private String username;
+    @NotEmpty
     private String password;
     private String activationCode;
+    @Email(message = "Некорректный ввод")
+    @NotEmpty
     private String email;
     private boolean active;
 
@@ -27,7 +36,6 @@ public class User implements UserDetails {
     public boolean isAdmin() {
         return roles.contains(Role.ADMIN);
     }
-
 
     public User(String username, String password) {
         this.username = username;

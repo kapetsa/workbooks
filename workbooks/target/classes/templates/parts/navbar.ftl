@@ -21,8 +21,22 @@
             </li>
             </#if>
         </ul>
-
-        <div class="navbar-text mr-3">${name}</div>
-        <@l.logout />
     </div>
+
+        <div class="navbar-text mr-3">
+        <#if user?? &&  name??>
+            Привет,${name}!
+        <div>
+            <a href="/user/profile">Мой профиль</a>
+        </div>
+        <#else>
+        <a href="/login">Войти в аккаунт</a>
+        </#if>
+        <#if user?? &&  name??>
+        <@l.logout/>
+        </#if>
+        </div>
+
+
+
 </nav>

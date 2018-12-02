@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- AngularJS min production framework -->
+    <spring:url value="/resources/angularjs/angular.min.js" var="angularjs" />
     <meta charset="UTF-8">
     <title>Конспекты</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

@@ -1,5 +1,7 @@
 package com.novik.workbooks.domain;
 
+import net.sf.oval.constraint.NotEmpty;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,10 +10,15 @@ public class Workbook {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @NotEmpty
     private String body;
+    @NotEmpty
     private String description;
+    @NotEmpty
     private String name;
+    @NotEmpty
     private String spec;
+    @NotEmpty
     private String tag;
     private Long rate_id;
 
